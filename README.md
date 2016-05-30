@@ -4,4 +4,4 @@
 
 Start page is index.html
 
-just only need texas and cocos2d-html5, it will be run.
+just only need texas and cocos2d folders, it will be run.
