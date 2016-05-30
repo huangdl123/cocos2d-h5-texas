@@ -1,0 +1,23 @@
+{
+    "debugMode" : 1,
+    "noCache": false,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"../",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/resource.js"
+        ,"src/util.js"
+        ,"src/const.js"
+        ,"src/seat.js"
+        ,"src/timing.js"
+        ,"src/poker.js"
+        ,"src/dealer.js"
+        ,"src/player.js"
+        ,"src/texas.js"
+    ]
+}

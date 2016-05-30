@@ -1,0 +1,1 @@
+var g_resources = ['poker.png', 'bg.png', 'button.png', 'icon.png'];
