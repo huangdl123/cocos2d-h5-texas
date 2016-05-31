@@ -332,7 +332,8 @@ var GameLayer = cc.Layer.extend({
     },
     drawUserButton: function () {
         if(this.userMenu){
-            this.addChild(this.userMenu);
+            cc.log('show user menu')
+            this.userMenu.setVisible(true);
             return this;
         }
         var size = cc.director.getWinSize(), scale = 3 / 5, opacity = 188;
@@ -360,7 +361,7 @@ var GameLayer = cc.Layer.extend({
     },
     removeUserButton: function () {
         if(this.userMenu){
-            this.removeChild(this.userMenu);
+            this.userMenu.setVisible(false);
             return this;
         }
     },

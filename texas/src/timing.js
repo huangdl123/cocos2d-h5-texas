@@ -58,6 +58,7 @@ var Timing = cc.DrawNode.extend({
         this.points = points;
     },
     drawLine: function (start, end, da) {
+        this._buffer.length = 0;
         this.cleanup();
         var p, from, to, color = this.lineColor, drawAlpha = !!da;
         start = start || 0;
@@ -99,12 +100,14 @@ var Timing = cc.DrawNode.extend({
     },
     stop: function (args) {
         if (this.curStep >= this.allStep) return;
-        if (this.curStep > 0 && this.curStep < this.allStep) {
-            this.drawLine(this.curStep, this.allStep, true);
-            this.curStep = this.allStep;
-        }
-        var cb = this.getTimeoutCallBack();        
-        cb && cb.apply(null, [this].concat(args));
+        // if (this.curStep > 0 && this.curStep < this.allStep) {
+        //     this.drawLine(this.curStep, this.allStep, true);
+        //     this.curStep = this.allStep;
+        // }
+        this._buffer.length = 0;
+        this.curStep = this.allStep + 1;
+        var cb = this.getTimeoutCallBack();
+        cb && cb.apply(null, Util.isArray(args) ? [this].concat(args) : [this]);
         cc.log('done.');
     },
     setTimeoutCallBack: function (fn) {

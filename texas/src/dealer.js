@@ -12,8 +12,8 @@ var Dealer = cc.Sprite.extend({
     rifflePoker: function () {
         this._pokers = Poker.init().riffle();
     },
-    getAPoker: function () {
-        var poker = Poker.get(), type = arguments[0] || 'private';
+    getAPoker: function (type) {
+        var poker = Poker.get(), type = type || 'private';
         return new PokerCard(poker._num, poker._color, type);
     },
     sendPokerToPlayer: function (poker, owner) {
